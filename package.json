@@ -1,7 +1,7 @@
 {
   "name": "my-app",
   "version": "0.1.0",
-  "homepage": "https://jsr029.github.io/my-app",
+  "homepage": "https://jsr029.github.io/Rakotonirina_JeanSebastien_P14_HRnet_06092022",
   "private": true,
   "dependencies": {
     "@hookform/error-message": "^2.0.0",
