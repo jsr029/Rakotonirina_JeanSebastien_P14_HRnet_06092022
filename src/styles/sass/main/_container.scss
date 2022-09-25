@@ -1,0 +1,20 @@
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.employees{
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
+    align-items: center;
+}
+.rdt_TableRow:nth-child(2n+1) {
+    background-color: lighten(grey, 35%);
+}  
+.sc-dkzDqf:first-child, .gZWIKX:first-child, .rdt_TableRow:first-child{
+    border-bottom: 2px solid black;
+}
+.sc-dkzDqf:last-child, .gZWIKX:last-child, .rdt_TableRow:last-child{
+    border-bottom: 2px solid black;
+}
