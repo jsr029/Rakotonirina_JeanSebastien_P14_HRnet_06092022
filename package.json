@@ -1,7 +1,6 @@
 {
   "name": "my-app",
   "version": "0.1.0",
-  "homepage": "https://jsr029.github.io/Rakotonirina_JeanSebastien_P14_HRnet_06092022",
   "private": true,
   "dependencies": {
     "@hookform/error-message": "^2.0.0",
@@ -29,6 +28,7 @@
     "redux-devtools-extension": "^2.13.9",
     "redux-state-sync": "^3.1.4",
     "redux-thunk": "^2.4.1",
+    "serve": "^14.0.1",
     "styled-components": "^5.3.5",
     "web-vitals": "^2.1.4"
   },
