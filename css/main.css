@@ -1,0 +1,225 @@
+html {
+  color: #2c3e50;
+}
+
+p, a, span, h1, h2, ul, li {
+  font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+  font-style: normal;
+  font-variant: normal;
+}
+
+blockquote {
+  font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+  font-size: 21px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+pre {
+  font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+  font-size: 13px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 18.5714px;
+}
+
+html,
+body {
+  font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+  font-style: normal;
+  font-variant: normal;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+img {
+  border: none;
+}
+
+#root {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.react-datepicker__month-container {
+  max-width: 315px;
+}
+.react-datepicker__month-container select {
+  height: 20px;
+  margin: 10px 0;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+label {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 10px;
+}
+
+.address {
+  width: 287px;
+  margin: 10px 2px;
+  padding: 6px 12px;
+}
+
+input {
+  width: 177px;
+  height: 21px;
+}
+
+select {
+  width: 256px;
+  height: 40px;
+  margin-bottom: 10px;
+  background: #e6e6e6;
+}
+select option {
+  margin: 6px 2px;
+  padding: 16px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.employees {
+  display: flex;
+  flex-direction: column;
+  margin: 10px auto;
+  align-items: center;
+}
+
+.rdt_TableRow:nth-child(2n+1) {
+  background-color: #d9d9d9;
+}
+
+.sc-dkzDqf:first-child, .gZWIKX:first-child, .rdt_TableRow:first-child {
+  border-bottom: 2px solid black;
+}
+
+.sc-dkzDqf:last-child, .gZWIKX:last-child, .rdt_TableRow:last-child {
+  border-bottom: 2px solid black;
+}
+
+.button {
+  width: 100%;
+  text-align: right;
+}
+
+button {
+  width: 20%;
+  margin: 10px 0;
+}
+
+.modal {
+  vertical-align: middle;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  z-index: 2;
+  max-width: 500px;
+  box-sizing: border-box;
+  width: 90%;
+  background: #fff;
+  padding: 15px 30px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -o-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 0 10px #000;
+  -moz-box-shadow: 0 0 10px #000;
+  -o-box-shadow: 0 0 10px #000;
+  -ms-box-shadow: 0 0 10px #000;
+  box-shadow: 0 0 10px #000;
+  text-align: left;
+}
+
+.modalButton {
+  position: absolute;
+  top: -20px;
+  right: -10px;
+  border-radius: 50%;
+  width: 30px;
+  padding: 5px;
+  color: white;
+  background: black;
+}
+
+.App {
+  width: 100%;
+}
+.App table {
+  width: 100%;
+}
+.App table thead tr:first-child th {
+  font-size: 32px;
+  font-weight: bold;
+  padding: 20px 0;
+  margin: 0;
+}
+.App table thead tr:nth-child(2) th {
+  border-bottom: 1px solid #111;
+}
+.App table tbody tr:last-child td {
+  border-bottom: 1px solid #111;
+}
+.App table tbody tr:nth-child(2n+1) {
+  background: #f7f7f7;
+}
+.App table tbody tr td:first-child {
+  background: #d8d8d8;
+}
+.App table tbody tr:nth-child(2n) td:first-child {
+  background: #f7f7f7;
+}
+.App table td {
+  padding: 8px 10px;
+  text-align: center;
+}
+.App table th {
+  padding: 10px 18px;
+}
+
+.kJrhuj {
+  width: 32%;
+}
+
+/*# sourceMappingURL=main.css.map */
