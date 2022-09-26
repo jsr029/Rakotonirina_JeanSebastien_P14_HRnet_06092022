@@ -20,6 +20,8 @@ function Home() {
   const dispatch = useDispatch()
   const [showModal, setShowModal] = useState(false)
   const hideModal = () => showModal && setShowModal(false)
+  const defaultDate = null
+
   const options = [
     { value: 'Sales', label: 'Sales' },
     { value: 'Marketing', label: 'Marketing' },
@@ -35,13 +37,15 @@ function Home() {
   const onSubmit = data => {
     const employeesStringify = JSON.stringify(data)
     const employeesParse = JSON.parse(employeesStringify)
+    console.log(employeesParse)
     dispatch(employees(employeesParse))
     setShowModal(true)
     reset()
   }
 
-  const [startDate, setStartDate] = useState(new Date());
-  const [startDob, setStartDob] = useState(new Date());
+  const [startDate, setStartDate] = useState(defaultDate);
+  const [startDob, setStartDob] = useState(defaultDate);
+
   const years = range(1990, getYear(new Date()) + 1, 1);
   const months = [
     "January",
@@ -96,7 +100,7 @@ function Home() {
                   decreaseMonth,
                   increaseMonth,
                   prevMonthButtonDisabled,
-                  nextMonthButtonDisabled,
+                  nextMonthButtonDisabled
                 }) => (
                   <div
                     style={{
@@ -141,6 +145,7 @@ function Home() {
                 dateFormat="dd/MM/yyyy"
                 selected={startDob}
                 onChange={(date) => { setStartDob(date); field.onChange(date) }}
+                required={true}
               />
 
             )}
@@ -153,61 +158,64 @@ function Home() {
             name='startdate'
             render={({ field }) => (
               <DatePicker
-              renderCustomHeader={({
-                date,
-                changeYear,
-                changeMonth,
-                decreaseMonth,
-                increaseMonth,
-                prevMonthButtonDisabled,
-                nextMonthButtonDisabled,
-              }) => (
-                <div
-                  style={{
-                    margin: 10,
-                    display: "flex",
-                    justifyContent: "center",
-                  }}
-                >
-                  <button onClick={decreaseMonth} disabled={prevMonthButtonDisabled}>
-                    {"<"}
-                  </button>
-                  <select
-                    value={getYear(date)}
-                    onChange={({ target: { value } }) => changeYear(value)}
+                renderCustomHeader={({
+                  date,
+                  changeYear,
+                  changeMonth,
+                  decreaseMonth,
+                  increaseMonth,
+                  prevMonthButtonDisabled,
+                  nextMonthButtonDisabled,
+                }) => (
+                  <div
+                    style={{
+                      margin: 10,
+                      display: "flex",
+                      justifyContent: "center",
+                    }}
                   >
-                    {years.map((option) => (
-                      <option key={option} value={option}>
-                        {option}
-                      </option>
-                    ))}
-                  </select>
+                    <button onClick={decreaseMonth} disabled={prevMonthButtonDisabled}>
+                      {"<"}
+                    </button>
+                    <select
+                      value={getYear(date)}
+                      onChange={({ target: { value } }) => changeYear(value)}
+                    >
+                      {years.map((option) => (
+                        <option key={option} value={option}>
+                          {option}
+                        </option>
+                      ))}
+                    </select>
 
-                  <select
-                    value={months[getMonth(date)]}
-                    onChange={({ target: { value } }) =>
-                      changeMonth(months.indexOf(value))
-                    }
-                  >
-                    {months.map((option) => (
-                      <option key={option} value={option}>
-                        {option}
-                      </option>
-                    ))}
-                  </select>
+                    <select
+                      value={months[getMonth(date)]}
+                      onChange={({ target: { value } }) =>
+                        changeMonth(months.indexOf(value))
+                      }
+                    >
+                      {months.map((option) => (
+                        <option key={option} value={option}>
+                          {option}
+                        </option>
+                      ))}
+                    </select>
 
-                  <button onClick={increaseMonth} disabled={nextMonthButtonDisabled}>
-                    {">"}
-                  </button>
-                </div>
-              )}
-              locale="fr"
-              dateFormat="dd/MM/yyyy"
-              selected={startDate}
-              onChange={(date) => { setStartDate(date); field.onChange(date) }}
-            />
+                    <button onClick={increaseMonth} disabled={nextMonthButtonDisabled}>
+                      {">"}
+                    </button>
+                  </div>
+                )}
+                locale="fr"
+                dateFormat="dd/MM/yyyy"
+                selected={startDate}
+                onChange={(date) => { setStartDate(date); field.onChange(date) }}
+                required={true}
+              />
             )}
           />
+          <ErrorMessage errors={errors} name="startdate" />
+
           <fieldset className="address">
             <legend>Address</legend>
 
@@ -220,10 +228,10 @@ function Home() {
             <label htmlFor="State">State</label>
             <Controller
               control={control}
-              rules={{ required: true }}
               name='State'
               render={({ field }) => (
                 <Select
+                  {...register('State', { required: true })}
                   className='StatesSelect'
                   options={statesArray}
                   onChange={(stat) => field.onChange(stat)}
@@ -231,6 +239,9 @@ function Home() {
                 />
               )}
             />
+            {errors.State && <p style={{ color: 'red' }}> {errors.State.message}</p>}
+
+
             <label htmlFor="zipcode">Zip Code</label>
             <input id="zipcode" type="number" {...register('zipcode', { required: true })} />
           </fieldset>
@@ -243,6 +254,13 @@ function Home() {
             name='Departement'
             render={({ field }) => (
               <Select
+                {...register('Departement', {
+                  required: true,
+                  pattern: {
+                    value: /[a-z0-9.-]+?/g,
+                    message: "Please, choose a Deartment !"
+                  }
+                })}
                 className='react-select__option'
                 options={options}
                 onChange={(dep) => field.onChange(dep)}
@@ -250,8 +268,10 @@ function Home() {
               />
             )}
           />
+          {errors.Departement && <p style={{ color: 'red' }}> {errors.Departement.message}</p>}
+
           <div className='button'>
-            <button type='submit'>Save</button>
+            <button type='submit' >Save</button>
           </div>
           <Modal show={showModal} onClickCloseBtn={hideModal}>
             <h1>Employee saved !</h1>
