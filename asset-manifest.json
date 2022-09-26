@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/my-app/static/css/main.66d4174d.css",
-    "main.js": "/my-app/static/js/main.94ad5b99.js",
-    "static/js/853.cf587d58.chunk.js": "/my-app/static/js/853.cf587d58.chunk.js",
-    "static/js/720.7ec2f974.chunk.js": "/my-app/static/js/720.7ec2f974.chunk.js",
-    "static/js/787.28cb0dcd.chunk.js": "/my-app/static/js/787.28cb0dcd.chunk.js",
-    "static/js/444.f08f0745.chunk.js": "/my-app/static/js/444.f08f0745.chunk.js",
-    "static/css/551.4034a69b.chunk.css": "/my-app/static/css/551.4034a69b.chunk.css",
-    "index.html": "/my-app/index.html",
-    "main.66d4174d.css.map": "/my-app/static/css/main.66d4174d.css.map",
-    "main.94ad5b99.js.map": "/my-app/static/js/main.94ad5b99.js.map",
-    "853.cf587d58.chunk.js.map": "/my-app/static/js/853.cf587d58.chunk.js.map",
-    "720.7ec2f974.chunk.js.map": "/my-app/static/js/720.7ec2f974.chunk.js.map",
-    "787.28cb0dcd.chunk.js.map": "/my-app/static/js/787.28cb0dcd.chunk.js.map",
-    "444.f08f0745.chunk.js.map": "/my-app/static/js/444.f08f0745.chunk.js.map",
-    "551.4034a69b.chunk.css.map": "/my-app/static/css/551.4034a69b.chunk.css.map"
+    "main.css": "/Rakotonirina_JeanSebastien_P14_HRnet_06092022/static/css/main.66d4174d.css",
+    "main.js": "/Rakotonirina_JeanSebastien_P14_HRnet_06092022/static/js/main.1cb9de05.js",
+    "static/js/853.cf587d58.chunk.js": "/Rakotonirina_JeanSebastien_P14_HRnet_06092022/static/js/853.cf587d58.chunk.js",
+    "static/js/720.7ec2f974.chunk.js": "/Rakotonirina_JeanSebastien_P14_HRnet_06092022/static/js/720.7ec2f974.chunk.js",
+    "static/js/787.28cb0dcd.chunk.js": "/Rakotonirina_JeanSebastien_P14_HRnet_06092022/static/js/787.28cb0dcd.chunk.js",
+    "static/js/444.27c7eb78.chunk.js": "/Rakotonirina_JeanSebastien_P14_HRnet_06092022/static/js/444.27c7eb78.chunk.js",
+    "static/css/551.4034a69b.chunk.css": "/Rakotonirina_JeanSebastien_P14_HRnet_06092022/static/css/551.4034a69b.chunk.css",
+    "index.html": "/Rakotonirina_JeanSebastien_P14_HRnet_06092022/index.html",
+    "main.66d4174d.css.map": "/Rakotonirina_JeanSebastien_P14_HRnet_06092022/static/css/main.66d4174d.css.map",
+    "main.1cb9de05.js.map": "/Rakotonirina_JeanSebastien_P14_HRnet_06092022/static/js/main.1cb9de05.js.map",
+    "853.cf587d58.chunk.js.map": "/Rakotonirina_JeanSebastien_P14_HRnet_06092022/static/js/853.cf587d58.chunk.js.map",
+    "720.7ec2f974.chunk.js.map": "/Rakotonirina_JeanSebastien_P14_HRnet_06092022/static/js/720.7ec2f974.chunk.js.map",
+    "787.28cb0dcd.chunk.js.map": "/Rakotonirina_JeanSebastien_P14_HRnet_06092022/static/js/787.28cb0dcd.chunk.js.map",
+    "444.27c7eb78.chunk.js.map": "/Rakotonirina_JeanSebastien_P14_HRnet_06092022/static/js/444.27c7eb78.chunk.js.map",
+    "551.4034a69b.chunk.css.map": "/Rakotonirina_JeanSebastien_P14_HRnet_06092022/static/css/551.4034a69b.chunk.css.map"
   },
   "entrypoints": [
     "static/css/main.66d4174d.css",
-    "static/js/main.94ad5b99.js"
+    "static/js/main.1cb9de05.js"
   ]
 }
