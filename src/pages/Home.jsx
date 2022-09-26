@@ -16,7 +16,8 @@ import Modal from 'r-js-modal2'
 registerLocale("fr", fr); // register it with the name you want
 
 function Home() {
-  const { control, formState: { errors }, register, handleSubmit, reset } = useForm();
+  const { control, formState, register, handleSubmit, reset } = useForm()
+  const { errors } = formState
   const dispatch = useDispatch()
   const [showModal, setShowModal] = useState(false)
   const hideModal = () => showModal && setShowModal(false)
@@ -61,7 +62,6 @@ function Home() {
     "November",
     "December",
   ];
-
   return (
     <>
       <div className="title">
@@ -77,15 +77,11 @@ function Home() {
             id="firstname"
             {...register('firstname', { required: "First Name is required" })}
           />
-          <ErrorMessage
-            errors={errors}
-            name="firstname"
-            render={({ message }) => <p>{message}</p>}
-          />
+          {errors.firstname && <p style={{ color: 'red' }}> {errors.firstname.message}</p>}
 
           <label htmlFor="lastname">Last Name</label>
           <input type="text" id="lastname" {...register('lastname', { required: "Last Name is required" })} />
-          <ErrorMessage errors={errors} name="lastname" />
+          {errors.lastname && <p style={{ color: 'red' }}> {errors.lastname.message}</p>}
 
           <label htmlFor="dateofbirth">Date of Birth</label>
           <Controller
@@ -145,11 +141,12 @@ function Home() {
                 dateFormat="dd/MM/yyyy"
                 selected={startDob}
                 onChange={(date) => { setStartDob(date); field.onChange(date) }}
-                required={true}
+                required
               />
 
             )}
           />
+          {errors.dateofbirth && <p style={{ color: 'red' }}> {errors.dateofbirth.message}</p>}
 
           <label htmlFor="startdate">Start Date</label>
           <Controller
@@ -210,20 +207,22 @@ function Home() {
                 dateFormat="dd/MM/yyyy"
                 selected={startDate}
                 onChange={(date) => { setStartDate(date); field.onChange(date) }}
-                required={true}
+                required
               />
             )}
           />
-          <ErrorMessage errors={errors} name="startdate" />
+          {errors.startdate && <p style={{ color: 'red' }}> {errors.startdate.message}</p>}
 
           <fieldset className="address">
             <legend>Address</legend>
 
             <label htmlFor="street">Street</label>
-            <input id="street" type="text" {...register('street', { required: true })} />
+            <input id="street" type="text" {...register('street', { required: "Enter your Street" })} />
+            {errors.street && <p style={{ color: 'red' }}> {errors.street.message}</p>}
 
             <label htmlFor="city">City</label>
-            <input id="city" type="text" {...register('city', { required: true })} />
+            <input id="city" type="text" {...register('city', { required: "Enter your City" })} />
+            {errors.city && <p style={{ color: 'red' }}> {errors.city.message}</p>}
 
             <label htmlFor="State">State</label>
             <Controller
@@ -231,7 +230,7 @@ function Home() {
               name='State'
               render={({ field }) => (
                 <Select
-                  {...register('State', { required: true })}
+                  {...register('State', { required: "Please, Choose a State" })}
                   className='StatesSelect'
                   options={statesArray}
                   onChange={(stat) => field.onChange(stat)}
@@ -243,24 +242,19 @@ function Home() {
 
 
             <label htmlFor="zipcode">Zip Code</label>
-            <input id="zipcode" type="number" {...register('zipcode', { required: true })} />
+            <input id="zipcode" type="number" {...register('zipcode', { required: "Please, put your zipcode" })} />
+            {errors.zipcode && <p style={{ color: 'red' }}> {errors.zipcode.message}</p>}
+
           </fieldset>
 
           <label htmlFor="Departement">Departement</label>
-
           <Controller
             control={control}
             rules={{ required: true }}
             name='Departement'
             render={({ field }) => (
               <Select
-                {...register('Departement', {
-                  required: true,
-                  pattern: {
-                    value: /[a-z0-9.-]+?/g,
-                    message: "Please, choose a Deartment !"
-                  }
-                })}
+                {...register('Departement', { required: "Please, Choose a Departement" })}
                 className='react-select__option'
                 options={options}
                 onChange={(dep) => field.onChange(dep)}
