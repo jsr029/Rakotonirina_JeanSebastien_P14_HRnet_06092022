@@ -2,7 +2,6 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage":"https://jsr029.github.io/Rakotonirina_JeanSebastien_P14_HRnet_06092022/",
   "dependencies": {
     "@hookform/error-message": "^2.0.0",
     "@reduxjs/toolkit": "^1.8.5",
